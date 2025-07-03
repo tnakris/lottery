@@ -1,116 +1,59 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.lottery</groupId>
-	<artifactId>lottoclan</artifactId>
-	<version>0.0.1</version>
-	<packaging>jar</packaging>
-	<name>Lotto Clan</name>
-
-
-	<licenses>
-		<license>
-			<name>GNU Lesser General Public License 3</name>
-			<url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.7</java.version>
-		<!-- dependencies versions -->
-		<junit.version>4.10</junit.version>
-	</properties>
-
+	<groupId>com.dev3l.hello_world</groupId>
+	<artifactId>mvn-hello-world</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>mvn-hello-world Maven Webapp</name>
+	<url>http://maven.apache.org</url>
 	<dependencies>
-	
-
-		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<!-- junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- log4j -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.5</version>
+		</dependency>
 	</dependencies>
-
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>3.3</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>2.2.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>2.4</version>
-					<configuration>
-						<archive>
-							<manifest>
-								<addClasspath>true</addClasspath>
-								<mainClass>net.i2cat.netconf.testserver.Server</mainClass>
-							</manifest>
-						</archive>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-
-
+		<finalName>mvn-hello-world</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>apache</id>
-			<name>Apache Releases</name>
-			<url>https://repository.apache.org/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>Maven-central</id>
-			<name>Maven central</name>
-			<url>http://repo1.maven.org/maven2</url>
-		</repository>
-	</repositories>
-
-	<scm>
-		<connection>scm:git:git://github.com/tnakris/lottery.git</connection>
-		<developerConnection>scm:git:git@github.com:tnakris/lottery.git</developerConnection>
-		<url>http://github.com/tnakris/lottery</url>
-		<tag>v0.0.1</tag>
-	</scm>
-	
-	 <!-- <distributionManagement>
-		<repository>
-			<uniqueVersion>false</uniqueVersion>
-			<id>maven.i2cat.net</id>
-			<name>maven.i2cat.net-releases</name>
-			<url>http://maven.i2cat.net:8081/artifactory/libs-release-local</url>
-		</repository>
-		<snapshotRepository>
-			<uniqueVersion>true</uniqueVersion>
-			<id>i2cat-snapshot</id>
-			<name>libs-snapshot-local</name>
-			<url>http://maven.i2cat.net:8081/artifactory/libs-snapshot-local</url>
-		</snapshotRepository>
-		<site>
-			<id>github</id>
-			<name>netconf-server</name>
-			<url>http://github.com/dana-i2cat/netconf-server/</url>
-		</site>
-	</distributionManagement>  
-
-	<issueManagement>
-		<system>JIRA</system>
-		<url>http://jira.i2cat.net/browse/OPENNAAS</url>
-	</issueManagement>  -->
-
-	
-
 </project>

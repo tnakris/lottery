@@ -25,21 +25,7 @@
 	<dependencies>
 	
 
-		<!-- Apache SSHD -->
-		<dependency>
-			<groupId>org.apache.sshd</groupId>
-			<artifactId>sshd-core</artifactId>
-			<version>${sshd.version}</version>
-		</dependency>
-
-
-		<!-- JUnit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
+		
 	</dependencies>
 
 	<build>
